@@ -1,0 +1,26 @@
+{
+	"name": "GuguruSearch",
+	"version": "1.0.0",
+	"author": [
+		"apple502j"
+	],
+	"url": "https://github.com/apple502j/GuguruSearch",
+	"descriptionmsg": "gugurusearch-desc",
+	"license-name": "GPL-3.0-or-later",
+	"type": "other",
+	"config": {
+		"GoogleSearchOptions": null
+	},
+	"AutoloadClasses": {
+		"GuguruSearch": "GuguruSearch.class.php"
+	},
+	"MessagesDirs": {
+		"GuguruSearch": [
+			"i18n"
+		]
+	},
+	"Hooks": {
+		"OutputPageParserOutput": "GuguruSearch::onOutputPageParserOutput"
+	},
+	"manifest_version": 1
+}
