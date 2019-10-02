@@ -1,25 +1,25 @@
 <?php
 
 class GuguruSearch {
-    public static function onOutputPageParserOutput( OutputPage &$out, ParserOutput $parserOutput ) {
+    public static function onOutputPageParserOutput( OutputPage $out, ParserOutput $parserOutput ) {
         global $wgGoogleSearchOptions;
 
         if (!$wgGoogleSearchOptions == null) {
             $opts = $wgGoogleSearchOptions;
 
-            if ($opts["googlebot"]) {
+            if (array_key_exists("googlebot", $opts) and $opts["googlebot"]) {
                 $out->addMeta("googlebot", $opts["googlebot"]);
             }
-            if (!$opts["sitesearch"]) {
+            if (array_key_exists("sitesearch", $opts) and !$opts["sitesearch"]) {
                 $out->addMeta("google", "nositelinkssearchbox");
             }
-            if (!$opts["translate"]) {
+            if (array_key_exists("translate", $opts) and !$opts["translate"]) {
                 $out->addMeta("google", "notranslate");
             }
-            if ($opts["verify"]) {
+            if (array_key_exists("verify", $opts) and $opts["verify"]) {
                 $out->addMeta("google-site-verification", $opts["google-site-verification"]);
             }
-            if ($opts["unsafe"]) {
+            if (array_key_exists("unsafe", $opts) and $opts["unsafe"]) {
                 $out->addMeta("rating", "adult");
             }
         }

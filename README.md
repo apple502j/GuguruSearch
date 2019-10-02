@@ -12,11 +12,11 @@ wfLoadExtension("GuguruSearch");
 But, if you love to configurate, you can.
 ```php
 $wgGoogleSearchOptions = array(
-    googlebot => "noarchive",
-    sitesearch => true,
-    translate => false,
-    verify => "verifykey",
-    unsafe => false
+    "googlebot" => "noarchive",
+    "sitesearch" => true,
+    "translate" => false,
+    "verify" => "verifykey",
+    "unsafe" => false
 );
 ```
 
